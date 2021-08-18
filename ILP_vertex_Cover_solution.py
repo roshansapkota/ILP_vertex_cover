@@ -40,10 +40,7 @@ V = {}
 for v in vertices:
     V[v] = m.addVar(vtype=GRB.BINARY,obj=1.0, name="x%d" % v) 
 
-
-
 #Constraints
-
 for edge in edges:
     u = edge[0]
     v = edge[1]
@@ -53,7 +50,6 @@ for edge in edges:
 
 
 #Creating the graph
-
 ver_x = np.random.rand(N) * 200 
 ver_y = np.random.rand(N) * 200
 
@@ -66,9 +62,7 @@ for i in gra_vertex:
     plt.annotate('$V  %d$' % (i), (ver_x[i]+2, ver_y[i]))
 plt.title('GRAPH')
 
-
 m.optimize()  #opimizing the model
-
 
 cover = []
 for v in vertices:
